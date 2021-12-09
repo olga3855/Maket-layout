@@ -1,0 +1,330 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+html,
+body {
+  height: auto;
+}
+
+.logo_menu {
+  display: flex;
+  padding: 5% 5%;
+}
+
+#menu {
+  background-color: #6e757a;
+}
+.main_menu {
+  display: flex;
+  list-style-type: none;
+  font-size: 18px;
+  color: #314584;
+  cursor: pointer;
+  position: absolute;
+  left: 14%;
+}
+
+.main_menu > li {
+  width: 7rem;
+}
+
+nav {
+  display: flex;
+}
+
+.arrows_contacts {
+  display: flex;
+  position: absolute;
+  right: 30%;
+}
+
+.arrows_contacts > div {
+  margin-left: 20%;
+}
+
+.arrow,
+.contact {
+  display: flex;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #314584;
+}
+
+.contact {
+  font-size: 18px;
+  color: #ff3946;
+  margin-top: -9%;
+  box-shadow: 3px 2px 9px -5px #000000;
+  padding: 9% 13%;
+  border-radius: 6%;
+}
+
+.contact p {
+  width: 6em;
+}
+
+/* ___________________________ */
+
+.download_main {
+  display: flex;
+  justify-content: space-around;
+  margin: 4% 0 0 17%;
+}
+
+.download > h1 {
+  font-size: 73.48px;
+  color: #314584;
+}
+
+.download > p {
+  color: #6e757a;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 4% 40% 4% 0;
+}
+
+.button {
+  display: flex;
+}
+
+button {
+  font-size: 18px;
+  background-color: #ff3946;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px 40px;
+}
+
+.button > p {
+  font-size: 18px;
+  color: #314584;
+  margin: 3%;
+}
+
+.vector {
+  margin: -6% 12% 0 0;
+  position: relative;
+}
+
+.vector > img {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  font-size: 18px;
+  color: #ff3946;
+  position: absolute;
+  right: 11%;
+  top: 38%;
+}
+/* ______________________________________
+*/
+
+.load_menu > h2 {
+  font-size: 48.43px;
+  color: #314584;
+  margin: 13% 0 0 17%;
+}
+
+.loading {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px 30px;
+  margin: 5% 17% 2.5%;
+}
+
+.loading > div {
+  background-color: #c3d0d8;
+  padding: 35% 40%;
+}
+
+.load_menu > h4 {
+  font-size: 18px;
+  color: #ff3946;
+  text-align: center;
+}
+
+/* _______________________________________ */
+
+.contact_us > h4 {
+  font-size: 18px;
+  color: #ff3946;
+  margin: 16% 0 1% 17%;
+}
+
+.contact_us > h1 {
+  font-size: 48.43px;
+  color: #314584;
+  margin: 0 0 3% 17%;
+}
+
+.contact_us > button {
+  display: block;
+  margin: 0 auto;
+}
+
+.contacts > input {
+  background-color: #f4fafe;
+  border: none;
+  padding: 2% 5%;
+}
+
+.contacts {
+  margin: 0 17% 3% 17%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "A B"
+    "C C";
+}
+
+.contacts > input::placeholder {
+  font-size: 18px;
+  color: #314584;
+}
+
+.box1 {
+  grid-area: A;
+}
+
+.box2 {
+  grid-area: B;
+}
+
+.box3 {
+  grid-area: C;
+}
+
+/* _____________________________ */
+
+footer {
+  text-align: center;
+  background-color: #314584;
+  margin-top: 3%;
+}
+
+footer > .main_menu {
+  color: #ffffff;
+}
+
+footer > h4 {
+  color: #ffffff;
+  padding: 4% 0 1%;
+  font-size: 18px;
+}
+
+footer > h1 {
+  color: #ff3946;
+  font-size: 48.43px;
+  margin-bottom: 2%;
+}
+
+footer > p {
+  color: #ffffff;
+  font-size: 14px;
+  padding-top: 4%;
+}
+
+.social_icons > img {
+  padding: 2%;
+  cursor: pointer;
+}
+
+footer > .main_menu {
+  left: 35%;
+}
+
+/* ______________________ */
+
+#menu {
+  display: none;
+  background-color: #ffffff;
+}
+
+#menu > img {
+  margin: -5px 0 0 14px;
+}
+
+@media (max-width: 1270px) {
+  .main_menu,
+  .arrow > p,
+  .contact > p {
+    font-size: 15px;
+  }
+  .main_menu > li {
+    width: 5.5rem;
+  }
+  .arrows_contacts {
+    right: 14%;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .main_menu {
+    background: black;
+    transition: opacity 1s ease;
+    position: fixed;
+    z-index: 999;
+    left: -100vw;
+    right: unset;
+    top: 0;
+    bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    color: aliceblue;
+  }
+  .main_menu.open > li {
+    margin: 0 auto;
+    padding: 5%;
+    width: 9em;
+  }
+
+  .main_menu.open {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    margin-left: 0;
+  }
+
+  .vector,
+  .text {
+    display: none;
+  }
+
+  button {
+    padding: 8px 18px;
+  }
+
+  .download > h1 {
+    font-size: 48.43px;
+  }
+}
+
+.vector > img {
+  display: none;
+}
+
+.vector .block {
+  display: block;
+  object-fit: cover;
+}
