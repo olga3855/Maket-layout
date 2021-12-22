@@ -9,19 +9,27 @@ mainMenu.addEventListener("click", () => {
   mainMenu.classList.remove("open");
 });
 
-const button = document.getElementById("button");
-const slides = document.querySelectorAll("img");
-let i = 0;
 
-button.addEventListener("click", () => {
-  ++i;
-  if (i >= slides.length) {
-    slides[i - 1].classList.remove("block");
-    i = 0;
-    slides[i].classList.add("block");
-    
-  } else {
-    slides[i - 1].classList.remove("block");
-    slides[i].classList.add("block");
+
+const slides = document.getElementsByClassName("vector");
+let index = 0;
+let i;
+let timer;
+
+function showSlides() {
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-});
+  index++;
+  if (index > slides.length) {
+    index = 1
+  }
+  slides[index - 1].style.display = "block";
+  let timer = setTimeout(showSlides, 3000);
+  console.log(index)
+  if (window.innerWidth <= 768) {
+    clearTimeout(timer);
+  }
+}
+
+showSlides();

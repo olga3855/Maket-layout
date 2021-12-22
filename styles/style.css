@@ -16,34 +16,41 @@ body {
 }
 
 #menu {
-  background-color: #6e757a;
-}
-.main_menu {
-  display: flex;
-  list-style-type: none;
-  font-size: 18px;
   color: #314584;
-  cursor: pointer;
+}
+
+.main_menu {
+  list-style: none;
+  left: 16%;
   position: absolute;
-  left: 14%;
 }
 
 .main_menu > li {
-  width: 7rem;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.main_menu a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #314584;
+  cursor: pointer;
 }
 
 nav {
   display: flex;
 }
 
-.arrows_contacts {
-  display: flex;
-  position: absolute;
-  right: 30%;
+.main_menu li:hover {
+  background: #f4fafe;
 }
 
-.arrows_contacts > div {
-  margin-left: 20%;
+/* __________________________________ */
+
+.arrows_contacts {
+  display: flex;
 }
 
 .arrow,
@@ -51,46 +58,62 @@ nav {
   display: flex;
 }
 
-.arrow {
+.arrow .lang {
   font-size: 18px;
   color: #314584;
+  border: none;
+  appearance: none;
+  outline: none;
+}
+
+.arrow {
+  position: absolute;
+  right: 32%;
+}
+
+.arrow a img {
+  margin-top: 15px;
 }
 
 .contact {
-  font-size: 18px;
-  color: #ff3946;
-  margin-top: -9%;
   box-shadow: 3px 2px 9px -5px #000000;
-  padding: 9% 13%;
+  padding: 8px 18px;
   border-radius: 6%;
+  position: absolute;
+  right: 18%;
 }
 
-.contact p {
-  width: 6em;
+.contact a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ff3946;
+}
+
+.contact a img {
+  padding-left: 20px;
 }
 
 /* ___________________________ */
 
 .download_main {
-  display: flex;
-  justify-content: space-around;
-  margin: 4% 0 0 17%;
+  margin: 10% 17% 15%;
+}
+
+.download {
+  position: relative;
 }
 
 .download > h1 {
   font-size: 73.48px;
   color: #314584;
+  margin-right: 45%;
 }
 
 .download > p {
   color: #6e757a;
   font-size: 18px;
   font-weight: normal;
-  margin: 4% 40% 4% 0;
-}
-
-.button {
-  display: flex;
+  margin: 4% 50% 4% 0;
 }
 
 button {
@@ -103,36 +126,50 @@ button {
   padding: 18px 40px;
 }
 
-.button > p {
+.button > a {
   font-size: 18px;
   color: #314584;
   margin: 3%;
+  text-decoration: none;
 }
 
 .vector {
-  margin: -6% 12% 0 0;
-  position: relative;
+  position: absolute;
+  top: 28%;
+  right: 6%;
+  display: none;
+}
+
+.vector::after {
+  content: "Lorem Ipsum";
+  position: absolute;
+  right: 12%;
+  top: 32%;
+  font-size: 18px;
+  color: #ff3946;
 }
 
 .vector > img {
-  width: 100%;
-  height: auto;
+  display: none;
 }
 
-.text {
-  font-size: 18px;
-  color: #ff3946;
-  position: absolute;
-  right: 11%;
-  top: 38%;
+.vector .block {
+  display: block;
+  object-fit: cover;
 }
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
 /* ______________________________________
 */
 
 .load_menu > h2 {
   font-size: 48.43px;
   color: #314584;
-  margin: 13% 0 0 17%;
+  margin: 13% 60% 0 17%;
 }
 
 .loading {
@@ -148,10 +185,12 @@ button {
   padding: 35% 40%;
 }
 
-.load_menu > h4 {
+.load_menu > a {
+  display: block;
   font-size: 18px;
   color: #ff3946;
   text-align: center;
+  text-decoration: none;
 }
 
 /* _______________________________________ */
@@ -162,10 +201,11 @@ button {
   margin: 16% 0 1% 17%;
 }
 
-.contact_us > h1 {
+.contact_us > a {
   font-size: 48.43px;
   color: #314584;
-  margin: 0 0 3% 17%;
+  margin-left: 17%;
+  text-decoration: none;
 }
 
 .contact_us > button {
@@ -176,17 +216,22 @@ button {
 .contacts > input {
   background-color: #f4fafe;
   border: none;
-  padding: 2% 5%;
+}
+
+.box1,
+.box2 {
+  padding: 4% 5%;
 }
 
 .contacts {
-  margin: 0 17% 3% 17%;
+  margin: 2% 17% 3% 17%;
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "A B"
+    "C C"
     "C C";
 }
 
@@ -205,6 +250,7 @@ button {
 
 .box3 {
   grid-area: C;
+  padding: 2% 5% 10% 3%;
 }
 
 /* _____________________________ */
@@ -213,10 +259,24 @@ footer {
   text-align: center;
   background-color: #314584;
   margin-top: 3%;
+  width: auto;
+}
+
+footer > .main_menu a {
+  color: #ffffff;
+}
+
+footer > .main_menu li:hover {
+  color: #c3d0d8;
+  background: #314584;
+}
+
+footer > .main_menu a:hover {
+  color: #c3d0d8;
 }
 
 footer > .main_menu {
-  color: #ffffff;
+  left: 35%;
 }
 
 footer > h4 {
@@ -237,13 +297,9 @@ footer > p {
   padding-top: 4%;
 }
 
-.social_icons > img {
+.social_icons > a > img {
   padding: 2%;
   cursor: pointer;
-}
-
-footer > .main_menu {
-  left: 35%;
 }
 
 /* ______________________ */
@@ -257,74 +313,133 @@ footer > .main_menu {
   margin: -5px 0 0 14px;
 }
 
-@media (max-width: 1270px) {
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1570px) {
+  .vector > img {
+    width: 80%;
+  }
+  .vector {
+    left: 60%;
+  }
+}
+
+@media (max-width: 1420px) {
   .main_menu,
   .arrow > p,
   .contact > p {
     font-size: 15px;
   }
-  .main_menu > li {
-    width: 5.5rem;
+  .contact {
+    right: 5%;
   }
-  .arrows_contacts {
-    right: 14%;
+  .download > h1 {
+    font-size: 40px;
+    margin-right: 60%;
+  }
+  .main_menu {
+    left: 14%;
+  }
+  .main_menu > li {
+    padding: 0 6px;
+  }
+  .load_menu > h2,
+  .contact_us > a {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .vector::after {
+    font-size: 14px;
+  }
+  footer > h1 {
+    font-size: 18px;
+  }
+  footer > .main_menu {
+    left: 30%;
+  }
+}
+
+@media (max-width: 883px) {
+  .main_menu > li {
+    padding: 0 3px;
+  }
+  .arrow .lang,
+  .contact a,
+  .main_menu > li a {
+    font-size: 12px;
+  }
+  .download > h1 {
+    font-size: 30px;
+    margin-right: 50%;
+  }
+  button {
+    font-size: 12px;
+    padding: 8px 18px;
   }
 }
 
 @media (max-width: 768px) {
   #menu {
     display: block;
-    padding: 5px;
-    margin: 0 auto;
+    margin-left: 60px;
     cursor: pointer;
   }
-
+  .arrow {
+    right: 45%;
+  }
+  .contact {
+    padding: 4px 14px;
+  }
+  .slider {
+    display: none;
+  }
   .main_menu {
-    background: black;
-    transition: opacity 1s ease;
+    background: #c3d0d8;
     position: fixed;
     z-index: 999;
-    left: -100vw;
-    right: unset;
-    top: 0;
-    bottom: 0;
+    right: 25%;
+    top: 6%;
+    bottom: 79%;
     flex-direction: column;
     text-align: center;
     opacity: 0;
-    color: aliceblue;
   }
-  .main_menu.open > li {
+  .main_menu li {
+    display: block;
+    padding-top: 2%;
+  }
+  .main_menu.open a {
     margin: 0 auto;
-    padding: 5%;
-    width: 9em;
   }
-
   .main_menu.open {
-    left: 0;
-    right: 0;
     opacity: 1;
-    margin-left: 0;
   }
-
-  .vector,
-  .text {
+  .vector {
     display: none;
   }
-
-  button {
-    padding: 8px 18px;
-  }
-
   .download > h1 {
-    font-size: 48.43px;
+    margin-right: 0;
   }
-}
-
-.vector > img {
-  display: none;
-}
-
-.vector .block {
-  display: block;
-  object-fit: cover;
+  .download > p {
+    margin-right: 0;
+    font-size: 14px;
+  }
+  .load_menu > h2 {
+    margin-right: 20%;
+  }
+  .button > a {
+    font-size: 10px;
+  }
+  .contacts {
+    margin-right: 17%;
+  }
 }
